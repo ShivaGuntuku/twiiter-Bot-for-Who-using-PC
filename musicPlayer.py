@@ -1,9 +1,25 @@
 import random
 import mp3play
+import os
+import scandir
 import time
 from mutagen.mp3 import MP3
-from mp3Graber import mp3files
 from math import floor
+
+def mp3files():
+	mp3list = []
+	for paths,dirs,files in scandir.walk(r'D:\Audio\forJarvis'):
+		"""if want to search mp3 files from all you HDD then 
+		provide all drives path postions instead of D:\\Audio
+		add extra back slash where ever back slash occur. 
+		"""
+		for file in files:
+			if file.endswith('.mp3'):
+				fullpath =mp3list.append(os.path.join(paths,file))
+	#print mp3list
+	#print len(mp3list)
+	return mp3list
+#mp3files()
 
 
 def length(file):
@@ -25,6 +41,5 @@ def playFile():
 		# Let it play for up to 30 seconds, then stop it.
 		time.sleep(min(filelength, clip.seconds()))
 		clip.stop()
-
 
 #playFile()  # for testing process script is working or not.
