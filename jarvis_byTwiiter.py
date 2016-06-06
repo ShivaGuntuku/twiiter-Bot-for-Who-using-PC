@@ -1,13 +1,13 @@
 import re
-from mp3Player.musicPlayer import playFile
-from ingridents.twitter_test import tweeterPost
-from ingridents.twitter_content import jarvis_replay
+import Music_player 
+import Twitter_what 
+ 
 
 """test with twitter"""
-twit = tweeterPost()
+twit = Twitter_what.tweeterPost()
 if bool(re.search(r'\bmusic|songs|tracks\b', twit, re.IGNORECASE)):
  	#voiceOut.Speak ("playing Songs wait.")
- 	playFile()
+ 	Music_player.playFile()
 
 elif bool(re.search(r'\bwho|trace|find\b', twit, re.IGNORECASE)):
-	jarvis_replay()
+	Twitter_what.jarvis_replay()
