@@ -1,0 +1,5 @@
+mp3play==0.1.15
+mutagen==1.32
+scandir==1.2
+tweepy==3.5.0
+openCV
